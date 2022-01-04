@@ -21,7 +21,8 @@ h1 {
 }
 .header 
 {
-    margin-top: 40px;
+    padding-top: 30px;
     border-bottom: 3px solid #fd2d01 ;
+    background: #FFF;
 }
 </style>

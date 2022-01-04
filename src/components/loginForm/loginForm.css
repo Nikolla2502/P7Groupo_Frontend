@@ -1,0 +1,103 @@
+.login__header{
+    display: flex;
+    width:330px;
+    margin:auto;
+    margin-top:45px;
+}
+.login, .register {
+    width:50%;
+    font-size: 1.3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px #333;
+    cursor:pointer;
+}
+.login {
+    border-radius: 10px 0 0 0;
+}
+.register {
+    border-radius: 0 10px 0 0;
+}
+.login:hover, .register:hover {
+
+    text-decoration: underline;
+}
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: "Poppins",sans-serif;
+}
+a {
+    text-decoration: none;
+    color:black;
+}
+body {
+    background: #dfe9f5;
+}
+
+.login__box {
+    width: 330px;
+    margin: 0 auto;
+
+    background: #fff;
+    border-radius: 0 0 10px 10px;
+    text-align: center;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+    border: solid 1px #333;
+    border-top:none;
+
+}
+h1 {
+    font-size: 2rem;
+    color: #07001f;
+    padding-top: 1rem;
+}
+p {
+    margin-bottom: 1rem;
+}
+form input{
+    width: 85%;
+    outline: none;
+    border: none;
+    background: #dfe9f5;
+    padding: 15px 0;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.recover {
+    font-size: 0.8rem;
+}
+.recover a {
+    text-decoration: none;
+    color: #07001f;
+}
+
+button {
+    font-size: 1.1rem;
+    margin: 1rem;
+    padding: 8px 0;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    width: 85%;
+    background:#fd2d01;
+    border:solid 2px #fd2d01;
+    color: #fff;
+    cursor: pointer;
+}
+button:hover {
+    background: #FFF;
+    color: #fd2d01;
+    transition: 0.8s;
+}
+
+a:hover {
+    text-decoration: underline;
+
+}
