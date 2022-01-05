@@ -1,12 +1,12 @@
 <template>
 <div>
     <div class="connexion">
-        <div class="login__header">
-            <div class="login" v-bind:style='{"background-color" : (cardLoginActive? "white" : "#dfe9f5" ),"border-bottom" : (cardLoginActive? "none" : "solid 1px black" )}' v-on:click='toggleLogin()'>Connexion</div>
-            <div class="register" v-bind:style='{"background-color" : (cardRegisterActive? "white" : "#dfe9f5" ),"border-bottom" : (cardRegisterActive? "none" : "solid 1px black" )}' v-on:click='toggleRegister()'>Inscription</div>
-        </div>
-        <Login v-if ='cardLogin'></Login>
-        <Register v-if='cardRegister'></Register>
+    <div class="login__header">
+        <div class="login" v-bind:style='{"background-color" : (cardLoginActive? "white" : "#dfe9f5" ),"border-bottom" : (cardLoginActive? "none" : "solid 1px black" )}' v-on:click='Component = "login"'>Connexion</div>
+        <div class="register" v-bind:style='{"background-color" : (cardRegisterActive? "white" : "#dfe9f5" ),"border-bottom" : (cardRegisterActive? "none" : "solid 1px black" )}' v-on:click='Component = "register"'>Inscription</div>
+    </div>
+    <component v-bind:is='Component'></component>
+
     </div>
 </div>
 </template>
@@ -18,8 +18,8 @@ import Register from './register.vue'
 export default {
     name: 'Connexion',
     components: {
-    Login,
-    Register
+    'login':Login,
+    'register':Register
     },
     data() {
         return {
@@ -27,6 +27,7 @@ export default {
             cardRegister:false,
             cardLoginActive: true,
             cardRegisterActive:false,
+            Component: 'login'
         }
     },
     methods : {

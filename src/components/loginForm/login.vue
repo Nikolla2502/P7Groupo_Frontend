@@ -1,21 +1,18 @@
 <template>
-  <div class="hello">
-        <div class="section">
-
         <div class="login__box">
-            <h1>Bonjour</h1>
-            <p>Merci de vous connecter</p>
-            <form>
-                <input type="text" placeholder="Votre Email">
-                <input type="password" placeholder="Votre Mot de Passe">
-            </form>
-            <button>Connexion</button>
-            <p class="recover">
-                <a href="#">Recuperation Mot de Passe</a>
-            </p>
+          <h1>Bonjour</h1>
+          <p>Merci de vous connecter</p>
+          <form>
+            <input type="text" placeholder="Votre Email">
+            <input type="password" placeholder="Votre Mot de Passe">
+          </form>
+          <button>Connexion</button>
+          <p class="recover">
+          <span class="bar"></span>
+            Mot de passe perdu ?<br>
+            <a href="#">Récuperation de votre mot de Passe</a>
+          </p>
         </div>
-    </div>
-  </div>
 </template>
 
 <script>
