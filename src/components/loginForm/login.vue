@@ -6,7 +6,7 @@
             <input type="text" placeholder="Votre Email">
             <input type="password" placeholder="Votre Mot de Passe">
           </form>
-          <button>Connexion</button>
+          <button ><router-link to='/post'>Connexion</router-link></button>
           <p class="recover">
           <span class="bar"></span>
             Mot de passe perdu ?<br>

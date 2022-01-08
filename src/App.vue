@@ -1,20 +1,19 @@
 <template>
   <div id="app">
-    <Banner message="Bienvenue sur votre réseau d'entreprise"></Banner>
-    <Connexion></Connexion>
+   
+    <router-view></router-view>
+    
 
   </div>
 </template>
 
 <script>
-import Banner from './components/header.vue'
-import Connexion from './components/loginForm/connexion.vue'
+
 
 export default {
   name: 'App',
   components: {
-    Banner,
-    Connexion
+
 
     
   }

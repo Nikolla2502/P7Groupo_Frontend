@@ -8,7 +8,7 @@
             <input type="password" placeholder="Votre Mot de Passe">
             <input type="password" placeholder="Confirmer votre Mot de Passe">
         </form>
-        <button>Inscription</button>
+        <button><router-link to='/post'>Inscription</router-link></button>
 </div>
 </template>
 

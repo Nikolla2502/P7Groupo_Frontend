@@ -1,5 +1,7 @@
 <template>
 <div>
+     <Banner message="Bienvenue sur votre réseau d'entreprise"></Banner>
+
     <div class="connexion">
         <div class="login__header">
             <div class="login" v-bind:style='{"background-color" : (cardLoginActive? "white" : "#dfe9f5" ),"border-bottom" : (cardLoginActive? "none" : "solid 1px black" )}' v-on:click='toggleLogin()'>Connexion</div>
@@ -12,12 +14,15 @@
 </template>
 
 <script>
+import Banner from '../header.vue'
+
 import Login from './login.vue'
 import Register from './register.vue'
 
 export default {
     name: 'Connexion',
     components: {
+    Banner,
     Login,
     Register
     },
