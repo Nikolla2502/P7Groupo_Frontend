@@ -15,11 +15,11 @@
 </template>
 
 <script>
-import Banner from '../header.vue'
-import Footer from '../footer.vue'
+import Banner from '@/components/header.vue'
+import Footer from '@/components/footer.vue'
 
-import Login from './login.vue'
-import Register from './register.vue'
+import Login from '@/components/loginForm/login.vue'
+import Register from '@/components/loginForm/register.vue'
 
 export default {
     name: 'Connexion',
