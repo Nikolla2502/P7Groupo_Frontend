@@ -10,11 +10,13 @@
         <Login v-if ='cardLogin'></Login>
         <Register v-if='cardRegister'></Register>
     </div>
+    <Footer></Footer>
 </div>
 </template>
 
 <script>
 import Banner from '../header.vue'
+import Footer from '../footer.vue'
 
 import Login from './login.vue'
 import Register from './register.vue'
@@ -23,6 +25,7 @@ export default {
     name: 'Connexion',
     components: {
     Banner,
+    Footer,
     Login,
     Register
     },

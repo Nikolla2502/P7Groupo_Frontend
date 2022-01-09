@@ -18,11 +18,15 @@ export default {
 <style scoped>
 h1 {
     margin: 0;
+    padding:0;
 }
 .header 
 {
-    padding-top: 30px;
+    padding-top: 10px;
     border-bottom: 3px solid #fd2d01 ;
     background: #FFF;
+}
+img {
+    width:30%;
 }
 </style>
