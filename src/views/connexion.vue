@@ -1,6 +1,6 @@
 <template>
 <div>
-     <Banner message="Bienvenue sur votre réseau d'entreprise"></Banner>
+    <Banner message="Bienvenue sur votre réseau d'entreprise"></Banner>
 
     <div class="connexion">
         <div class="login__header">
@@ -54,4 +54,4 @@ export default {
 }
 </script>
 
-<style src='./loginForm.css'></style>
+<style src='../components/loginForm/loginForm.css'></style>

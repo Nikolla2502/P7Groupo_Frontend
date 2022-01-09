@@ -35,9 +35,11 @@ h1 {
     padding-top: 30px;
     border-top: 3px solid #fd2d01 ;
     background: #FFF;
+
 }
 svg {
     height: 25px;
+    margin-right:5px;
 }
 .copyright {
     display: flex;

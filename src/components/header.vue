@@ -25,6 +25,7 @@ h1 {
     padding-top: 10px;
     border-bottom: 3px solid #fd2d01 ;
     background: #FFF;
+    
 }
 img {
     width:30%;
