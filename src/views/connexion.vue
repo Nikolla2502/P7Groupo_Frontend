@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="essai">
     <Banner message="Bienvenue sur votre réseau d'entreprise"></Banner>
 
     <div class="connexion">

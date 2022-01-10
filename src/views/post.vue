@@ -1,21 +1,21 @@
 <template>
-<div>
-     <Banner message="Votre réseau d'entreprise">
+<div class="contenu">
+     <Banner message="Votre réseau d'entreprise"></Banner>
 
-     </Banner>
+     
     <ul>
         <li class='userProfil'>Profil</li>
-        <li>Deconnexion</li>
+        <li><router-link to='/deconnexion'>Deconnexion</router-link></li>
     </ul>
-    <div class="contenu"></div>
+    
     <Footer></Footer>
 
 </div>
 </template>
 
 <script>
-import Banner from './header.vue'
-import Footer from './footer.vue'
+import Banner from '../components/header.vue'
+import Footer from '../components/footer.vue'
 
 
 
@@ -44,8 +44,6 @@ ul {
     border:solid 1px #fd2d01;
     box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.75);
 }
-.contenu {
-    height: 1500px;
-}
+
 
 </style>
