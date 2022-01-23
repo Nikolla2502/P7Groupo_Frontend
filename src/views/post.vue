@@ -2,14 +2,13 @@
 <div class="contenu">
     <BannerPost></BannerPost>
     <BodyPost></BodyPost>
-
 </div>
 </template>
 
 <script>
 
-import BannerPost from '../components/post_header.vue'
-import BodyPost from '../components/post_body.vue'
+import BannerPost from '../components/post/post_header.vue'
+import BodyPost from '../components/post/post_body.vue'
 
 
 
@@ -25,7 +24,4 @@ export default {
 }
 </script>
 
-<style scoped>
-
-
-</style>
+<style src='../components/post/post.css'></style>

@@ -1,0 +1,134 @@
+/* header post */
+
+.header {
+    margin-left: auto;
+    padding-top: 10px;
+    background: #FFF;
+}
+
+img {
+    width: 100%;
+}
+
+.banner_main {
+    display: flex;
+    justify-content: space-between;
+    background: rgb(255, 255, 255);
+    border-bottom: 3px solid #fd2d01;
+    margin: auto;
+}
+
+.profil {
+
+    margin: 1rem auto;
+    border: solid 1px #fd2d01;
+    padding: 3px 10px;
+    box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 5px;
+
+}
+
+.profil ul {
+    text-align: left;
+    list-style: none;
+}
+
+/* post body */
+.body_post {
+    display: flex;
+    background: #FFF;
+    margin: 1vw 5vw;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.aside {
+    padding-top: 1rem;
+    width: 20%;
+}
+
+.category {
+    margin: auto;
+    margin-left: 2vw;
+    padding: 1rem .3rem;
+    border: 1px solid #fd2d01;
+    border-radius: 5px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.category li {
+    font-weight: 100;
+    list-style-type: none;
+    background: #fd2d01;
+    color: beige;
+    margin: .3rem auto;
+    padding: 0 .3rem;
+    border-radius: 5px;
+    text-align: left;
+    width: 80%;
+}
+
+.post {
+    padding-top: 1rem;
+    margin: auto;
+    width: 50%;
+
+}
+
+.post li {
+
+    margin: 1rem auto;
+    border-radius: 5px;
+    align-items: center;
+    list-style-type: none;
+    border: solid 1px #fd2d01;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.post__header {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #dfe9f5;
+    border-radius: 5px 5px 0 0;
+}
+
+.user__name {
+    margin-top: 1vh;
+    margin-left: 0.5vw;
+    font-size: .9rem;
+
+}
+
+.post__title {
+    text-align: center;
+    margin-top: 1vh;
+    width: 80%;
+}
+
+.post__footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2vw;
+    background: #eaf1f8;
+}
+
+.post__footer svg {
+    width: 1vw;
+    margin: 1vw;
+    cursor: pointer;
+}
+
+.like__dislike {
+    display: flex;
+
+}
+
+.comments li {
+    border: 0;
+    border-top: solid 1px black;
+    margin: 0;
+    border-radius: 0;
+}
