@@ -2,25 +2,34 @@
     <div class='body_post'>
         <section class='aside'>
             <div class='category'>
-                <h4>Categories :</h4>
+                
                 <ul>
-                    <li v-bind:key='index' v-for="(item, index ) in categories">
-                        {{ item.label}}
-                    </li>
+                    <li v-on:click="updatePost()">Récents</li>
+                    <li>Les + Liker</li>
+                    <li>Les + Commentés</li>
                 </ul>
             </div>
         </section>
 
         <section class="post">
+
             <ul>
-                <li v-bind:key='index' v-for="(item, index ) in post">
+                <li>
+                    <textarea id="message" placeholder='Your Message' rows="6"></textarea>
+                    <div class="center">
+                    <input class="btn_submit" type="submit" value='Publier'>
+                    </div>
+                </li>
+
+                <li v-bind:key='index' v-for="(post, index ) in posts">
                     <section class='post__header'>
                         <div class="user__name">
-                        {{ item.user}} 
+                        User ID : {{ post.id_user}} <br>
+                        <span class="date">Date : {{ post.date_create}}</span>
                         </div>
-                        <p class="post__title"> {{ item.title }} </p>
+                        <p class="post__title"> {{ post.title }} </p>
                     </section>
-                    <p> {{ item.comment }}</p>
+                    <p> {{ post.comment }}</p>
                     
                     <section class="post__footer">
                         <div class="like__dislike">
@@ -85,39 +94,34 @@
 
 
 <script>
-
+import axios from 'axios';
 
 export default {
     name: 'BodyPost',
-    components: {
-
-    },
     data() {
         return {
-            categories: [
-                 {label :'Populaire'},
-                 {label :'Like++'},
-                 {label :'Ressources'},
-                 {label :'Questions'}
-             ],
-            post: [
-                {user :'Utilisateur1',title :'Titre1',comment:'Commentaire'},
-                {user :'Utilisateur2',title :'Titre2',comment:'Commentaire'},
-                {user :'Utilisateur3',title :'Titre3',comment:'Commentaire'},
-                {user :'Utilisateur4',title :'Titre4',comment:'Commentaire'}
-                
-
-             ],
-            comments: [
-                {user :'Commentaire Utilisateur1',comment:'Commentaire'},
-                {user :'Commentaire Utilisateur2',comment:'Commentaire'},
-                {user :'Commentaire Utilisateur3',comment:'Commentaire'},
-                {user :'Commentaire Utilisateur4',comment:'Commentaire'}
-             ],
-
+            posts: [],
+            comments: [],
         }
 
     },
+    methods: {
+        onLoad(){
+            axios.get('http://localhost:3000/api/thread')
+                .then(res => this.posts = res.data.result)
+                .catch(error => this.posts = [error,{ title: "Erreur de chargement"}])
+            },
+        updatePost(){
+            axios.get('http://localhost:3000/api/thread')
+            .then(res => this.posts = res.data.result)
+            .catch(error => this.posts = [error,{ title: "Erreur de chargement"}])
+        }
+        },
+
+    mounted: function () {
+            this.onLoad()
+    },
+
 
 }
 </script>
