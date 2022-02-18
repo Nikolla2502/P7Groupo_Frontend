@@ -131,7 +131,16 @@ img {
     border: solid 1px #fd2d01;
     box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
 }
-
+.post_create {
+    display: flex;
+    flex-direction: column;
+    
+}
+.post_create_item {
+    margin-top: 1rem;
+    width:80%;
+    
+}
 .post__header {
     display: flex;
     justify-content: space-between;
@@ -153,14 +162,16 @@ img {
     width: 80%;
 }
 
-.post__footer {
+.post__footer,
+.comment__footer {
     display: flex;
     justify-content: space-between;
     padding: 0 2vw;
     background: #eaf1f8;
 }
 
-.post__footer svg {
+.post__footer svg,
+.comment__footer svg {
     width: 1vw;
     margin: 1vw;
     cursor: pointer;
@@ -178,101 +189,4 @@ img {
     border-radius: 0;
 }
 
-/* Modale */
-*,
-::before,
-::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
 
-body {
-    font-family: Raleway, Helvetica, sans-serif;
-    background: #f1f1f1;
-}
-
-.modal-btn {
-    padding: 10px 14px;
-    font-size: 18px;
-    margin: 100px auto;
-    display: block;
-    min-width: 150px;
-    cursor: pointer;
-}
-
-.modal-container {
-    /* display: none; */
-    visibility: hidden;
-    position: fixed;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    transition: visibility 0.5s;
-}
-
-.modal-container.active {
-    /* display: block; */
-    visibility: visible;
-}
-
-.overlay {
-    opacity: 0;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #333333d3;
-    transition: opacity 0.4s 0.2s ease-out;
-}
-
-.modal-container.active .overlay {
-    opacity: 1;
-    transition: opacity 0.4s ease-out;
-}
-
-.modal {
-    opacity: 0;
-    width: 95%;
-    max-width: 500px;
-    min-width: 300px;
-    padding: 30px;
-    background: #fff;
-    border-radius: 5px;
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, calc(-50% - 50px));
-    transition: opacity 0.4s ease-out,
-        transform 0.4s ease-out;
-}
-
-.modal-container.active .modal {
-    opacity: 1;
-    transform: translate(-50%, -50%);
-    transition: opacity 0.4s 0.2s ease-out,
-        transform 0.4s 0.2s ease-out;
-
-}
-
-.close-modal {
-    padding: 8px 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: #ff365e;
-    color: #fff;
-}
-
-.modal h1 {
-    margin-bottom: 10px;
-    font-family: Poppins, sans-serif;
-    font-weight: 600;
-}
-
-.modal p {
-    line-height: 1.4;
-    margin-bottom: 16px;
-}

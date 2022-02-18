@@ -5,8 +5,9 @@
                 
                 <ul>
                     <li v-on:click="updatePost()">Récents</li>
-                    <li>Les + Liker</li>
-                    <li>Les + Commentés</li>
+                    <li>Cinema</li>
+                    <li>Bon plans vacances</li>
+                    <li>Sports</li>
                 </ul>
             </div>
         </section>
@@ -14,8 +15,9 @@
         <section class="post">
 
             <ul>
-                <li>
-                    <textarea id="message" placeholder='Your Message' rows="6"></textarea>
+                <li class="post_create">
+                    <input class="post_create_item" id="subject_title" type="text" name=""  placeholder='Le titre de votre post'>
+                    <textarea class="post_create_item" id="comment" placeholder='Le texte de votre post' rows="6"></textarea>
                     <div class="center">
                     <input class="btn_submit" type="submit" value='Publier'>
                     </div>
@@ -61,7 +63,7 @@
                             {{ item.user}} 
                             </div>
                             <p> {{ item.comment }}</p>
-                            <section class="post__footer">
+                            <section class="comment__footer">
                                 <div class="like__dislike">
                                     <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="thumbs-up" 
                                     class="like svg-inline--fa fa-thumbs-up fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" 
