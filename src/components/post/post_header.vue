@@ -7,7 +7,7 @@
             <div class='profil'>
                 <ul>
                     <li class='userProfil'>Profil</li>
-                    <li><router-link to='/deconnexion'>Deconnexion</router-link></li>
+                    <li><router-link to='/deconnexion' class="text-decoration-none text-dark">Deconnexion</router-link></li>
                 </ul>
             </div> 
          </div>
@@ -26,11 +26,4 @@ export default {
 }
 </script>
 
-<style scoped>
-
-
-a {
-    color: black;
-    text-decoration: none;
-}
-</style>
+<style></style>

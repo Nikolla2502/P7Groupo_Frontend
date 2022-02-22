@@ -36,7 +36,7 @@
     <label for="textarea">Le texte de votre post</label>
         <div class="d-flex justify-content-around">
             <label for="file-input" class="btn  mt-1 shadow-sm border border-dark">Add Image</label>
-            <input class="invisible" id="file-input" type="file" />
+            <input class="d-none" id="file-input" type="file" />
         </div>
         
     </div>

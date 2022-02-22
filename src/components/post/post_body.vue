@@ -24,8 +24,8 @@
                 <li v-bind:key='index' v-for="(post, index ) in posts">
                     <section class='post__header'>
                         <div class="user__name">
-                        Category : {{ post.id_category }} <br>
-                        User ID : {{ post.id_user}} <br>
+                        {{ post.category }} <br>
+                        par {{ post.pseudo}} <br>
                         <p class="class-text"><small class="text-muted">Date : {{ post.date_create}}</small></p>
                         </div>
                         <p class="post__title"> {{ post.title }} </p>
@@ -114,7 +114,7 @@ export default {
                 .catch(error => this.posts = [error,{ title: "Erreur de chargement"}])
             },
         reloadPost(){
-            axios.get('http://localhost:3000/api/thread')
+            axios.get('http://localhost:3000/api/thread/comments')
             .then(res => this.comments = res.data.result)
             .catch(error => this.comments = [error,{ title: "Erreur de chargement"}])
         }

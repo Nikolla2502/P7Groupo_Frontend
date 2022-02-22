@@ -8,9 +8,9 @@
           </form>
           <router-link to='/post'><button class="px-2 rounded-3" >Connexion</button></router-link>
           <p class="recover">
-          <span class="bar"></span>
+          <span class="bar my-3"></span>
             Mot de passe perdu ?<br>
-            <router-link to='/recovery' class="text-decoration-none text-dark">Récuperation de votre mot de Passe</router-link>
+            <router-link to='/recovery' class="fs-6 text-decoration-none text-dark ">Récuperation de votre mot de Passe</router-link>
           </p>
         </div>
 </template>
