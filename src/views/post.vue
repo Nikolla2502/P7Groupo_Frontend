@@ -2,6 +2,7 @@
 <div class="contenu">
     <BannerPost></BannerPost>
     <BodyPost></BodyPost>
+
 </div>
 </template>
 
@@ -13,12 +14,12 @@ import BodyPost from '../components/post/post_body.vue'
 
 
 
+
 export default {
     name: 'Post',
     components: {
     BannerPost,
     BodyPost
-
     },
 
 }

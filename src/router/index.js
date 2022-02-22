@@ -3,7 +3,8 @@ import VueRouter from 'vue-router'
 import Connexion from '@/views/connexion'
 import Post from '@/views/post'
 import Deconnexion from '@/views/deconnexion'
-
+import Recovery from  '@/views/recovery'
+import Edit from  '@/components/post/post_edit'
 
 Vue.use(VueRouter)
 
@@ -22,6 +23,16 @@ const routes = [
     path:'/post',
     name: 'Post',
    component: Post
+  },
+  {
+    path:'/edit',
+    name: 'Edit',
+   component: Edit
+  },
+  {
+    path:'/recovery',
+    name: 'Recovery',
+   component: Recovery
   },
 ]
 

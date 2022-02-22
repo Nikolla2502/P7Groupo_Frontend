@@ -54,6 +54,7 @@ img {
     }
 }
 
+/* Category */
 .aside {
     padding-top: 1rem;
     width: 20%;
@@ -65,23 +66,32 @@ img {
     margin: auto;
     margin-left: 2vw;
     padding: 1rem .3rem;
-    border: 1px solid #fd2d01;
+    border: 2px solid #fd2d01;
     border-radius: 5px;
-    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.5);
 }
 
 .category li {
     cursor: pointer;
     font-weight: 100;
-    color: beige;
+    color: #fff;
     list-style-type: none;
     background: #fd2d01;
+    border: solid 1px #fd2d01;
     margin: .3rem auto;
     padding: 0 .3rem;
     border-radius: 5px;
     text-align: left;
     width: 80%;
-    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.1);
+}
+.category li:hover,
+.btn:hover {
+    background: #FFF;
+    color: #fd2d01;
+    border: solid 1px #fd2d01;
+    /* box-shadow: 2px 2px 2px 0px #fd2d01; */
+    transition: 0.8s;
 }
 
 @media screen and (max-width: 800px) {
@@ -98,18 +108,29 @@ img {
     margin:1rem;
 }
 }
+
 .btn_submit {
-    
-    border: none;
     font-size: 1.3rem;
     font-weight: 300;
     color: beige;
     background: #fd2d01;
+    border: solid 1px #fd2d01;
     margin: .3rem auto;
     padding: .3rem 1rem;
     border-radius: 5px;
-    width: auto;
-    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+}
+.media_submit {
+        border: none;
+        font-size: 1.45rem;
+        font-weight: 300;
+        color: beige;
+        background: #fd2d01;
+        border: solid 1px #fd2d01;
+        margin: .3rem auto;
+        padding: auto;
+        border-radius: 5px;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
 }
 #message {
 
@@ -136,11 +157,7 @@ img {
     flex-direction: column;
     
 }
-.post_create_item {
-    margin-top: 1rem;
-    width:80%;
-    
-}
+
 .post__header {
     display: flex;
     justify-content: space-between;
@@ -169,14 +186,17 @@ img {
     padding: 0 2vw;
     background: #eaf1f8;
 }
-
-.post__footer svg,
-.comment__footer svg {
-    width: 1vw;
+svg {
+ 
+    width: 1.8vw;
     margin: 1vw;
     cursor: pointer;
 }
-
+.update svg {
+    margin:0;
+    margin-left: 90%;
+    color: rgb(68, 68, 68);
+}
 .like__dislike {
     display: flex;
 

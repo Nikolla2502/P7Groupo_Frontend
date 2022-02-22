@@ -4,9 +4,9 @@
             <div class='category'>
                 
                 <ul>
-                    <li v-on:click="updatePost()">Récents</li>
+                    <li v-on:click="reloadPost()">Récents</li>
                     <li>Cinema</li>
-                    <li>Bon plans vacances</li>
+                    <li>Vacances</li>
                     <li>Sports</li>
                 </ul>
             </div>
@@ -16,23 +16,23 @@
 
             <ul>
                 <li class="post_create">
-                    <input class="post_create_item" id="subject_title" type="text" name=""  placeholder='Le titre de votre post'>
-                    <textarea class="post_create_item" id="comment" placeholder='Le texte de votre post' rows="6"></textarea>
-                    <div class="center">
-                    <input class="btn_submit" type="submit" value='Publier'>
-                    </div>
+
+                        <router-link to='/edit' class="text-light text-decoration-none "><button class="btn_submit ">Publier</button></router-link>
+
                 </li>
 
                 <li v-bind:key='index' v-for="(post, index ) in posts">
                     <section class='post__header'>
                         <div class="user__name">
+                        Category : {{ post.id_category }} <br>
                         User ID : {{ post.id_user}} <br>
-                        <span class="date">Date : {{ post.date_create}}</span>
+                        <p class="class-text"><small class="text-muted">Date : {{ post.date_create}}</small></p>
                         </div>
                         <p class="post__title"> {{ post.title }} </p>
                     </section>
-                    <p> {{ post.comment }}</p>
-                    
+                    <div class="post__comment"> {{ post.comment }}</div>
+                    <div class="update"><svg viewBox="0 0 512 512">
+                    <path fill="currentColor" d="M490.3 40.4C512.2 62.27 512.2 97.73 490.3 119.6L460.3 149.7L362.3 51.72L392.4 21.66C414.3-.2135 449.7-.2135 471.6 21.66L490.3 40.4zM172.4 241.7L339.7 74.34L437.7 172.3L270.3 339.6C264.2 345.8 256.7 350.4 248.4 353.2L159.6 382.8C150.1 385.6 141.5 383.4 135 376.1C128.6 370.5 126.4 361 129.2 352.4L158.8 263.6C161.6 255.3 166.2 247.8 172.4 241.7V241.7zM192 63.1C209.7 63.1 224 78.33 224 95.1C224 113.7 209.7 127.1 192 127.1H96C78.33 127.1 64 142.3 64 159.1V416C64 433.7 78.33 448 96 448H352C369.7 448 384 433.7 384 416V319.1C384 302.3 398.3 287.1 416 287.1C433.7 287.1 448 302.3 448 319.1V416C448 469 405 512 352 512H96C42.98 512 0 469 0 416V159.1C0 106.1 42.98 63.1 96 63.1H192z"/></svg></div>
                     <section class="post__footer">
                         <div class="like__dislike">
                             <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="thumbs-up" 
@@ -41,7 +41,6 @@
                             <path fill="currentColor" d="M466.27 286.69C475.04 271.84 480 256 480 236.85c0-44.015-37.218-85.58-85.82-85.58H357.7c4.92-12.81 8.85-28.13 8.85-46.54C366.55 31.936 328.86 0 271.28 0c-61.607 0-58.093 94.933-71.76 108.6-22.747 22.747-49.615 66.447-68.76 83.4H32c-17.673 0-32 14.327-32 32v240c0 17.673 14.327 32 32 32h64c14.893 0 27.408-10.174 30.978-23.95 44.509 1.001 75.06 39.94 177.802 39.94 7.22 0 15.22.01 22.22.01 77.117 0 111.986-39.423 112.94-95.33 13.319-18.425 20.299-43.122 17.34-66.99 9.854-18.452 13.664-40.343 8.99-62.99zm-61.75 53.83c12.56 21.13 1.26 49.41-13.94 57.57 7.7 48.78-17.608 65.9-53.12 65.9h-37.82c-71.639 0-118.029-37.82-171.64-37.82V240h10.92c28.36 0 67.98-70.89 94.54-97.46 28.36-28.36 18.91-75.63 37.82-94.54 47.27 0 47.27 32.98 47.27 56.73 0 39.17-28.36 56.72-28.36 94.54h103.99c21.11 0 37.73 18.91 37.82 37.82.09 18.9-12.82 37.81-22.27 37.81 13.489 14.555 16.371 45.236-5.21 65.62zM88 432c0 13.255-10.745 24-24 24s-24-10.745-24-24 10.745-24 24-24 24 10.745 24 24z">
                             </path>
                             </svg>
-
                             <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="thumbs-down" 
                             class="dislike svg-inline--fa fa-thumbs-down fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" 
                             viewBox="0 0 512 512">
@@ -63,6 +62,7 @@
                             {{ item.user}} 
                             </div>
                             <p> {{ item.comment }}</p>
+                            
                             <section class="comment__footer">
                                 <div class="like__dislike">
                                     <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="thumbs-up" 
@@ -113,10 +113,10 @@ export default {
                 .then(res => this.posts = res.data.result)
                 .catch(error => this.posts = [error,{ title: "Erreur de chargement"}])
             },
-        updatePost(){
+        reloadPost(){
             axios.get('http://localhost:3000/api/thread')
-            .then(res => this.posts = res.data.result)
-            .catch(error => this.posts = [error,{ title: "Erreur de chargement"}])
+            .then(res => this.comments = res.data.result)
+            .catch(error => this.comments = [error,{ title: "Erreur de chargement"}])
         }
         },
 
@@ -128,4 +128,16 @@ export default {
 }
 </script>
 
-<style></style>
+<style scoped>
+
+label {
+    padding: 0;
+}
+label svg {
+    width: 1.5rem;
+    margin-bottom:0;
+}
+
+
+
+</style>
