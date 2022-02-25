@@ -1,17 +1,9 @@
 <template>
-    <div class='banner_post'>
-        <div class='banner_main'>
-            <div class='header'>
-                <img alt="Vue logo" src="@/assets/groupomania_txt.png">
-            </div>
-            <div class='profil'>
-                <ul>
-                    <li class='userProfil'>Profil</li>
-                    <li><router-link to='/deconnexion' class="text-decoration-none text-dark">Deconnexion</router-link></li>
-                </ul>
-            </div> 
-         </div>
+    <div class='header pt-2'>
+        <img alt="Vue logo" src="@/assets/groupomania.png">
+        <h1>{{ message }}</h1>
     </div>
+    
 </template>
 
 
@@ -26,4 +18,11 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+.header 
+{
+    border-bottom: 3px solid #fd2d01 ;
+    position:relative
+}
+
+</style>

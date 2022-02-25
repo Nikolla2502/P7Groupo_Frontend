@@ -1,23 +1,25 @@
 <template>
     <div class='body_post'>
-        <section class='aside'>
-            <div class='category'>
-                
-                <ul>
-                    <li v-on:click="reloadPost()">Récents</li>
-                    <li>Cinema</li>
-                    <li>Vacances</li>
-                    <li>Sports</li>
-                </ul>
-            </div>
+        <section class='aside mt-5 col-2 '>
+            <ul class="category list-group py-3">
+                <li v-on:click="reloadPost()">Récents</li>
+                <li class="list-group-item">Cinema</li>
+                <li class="list-group-item">Vacances</li>
+                <li class="list-group-item">Sports</li>
+            </ul>
+            <ul class='profil py-3'>
+                <li class='userProfil '>Profil</li>
+                <li ><router-link to='/deconnexion' class="text-decoration-none text-light">Deconnexion</router-link></li>
+            </ul>
+
         </section>
 
-        <section class="post">
+        <section class="post mt-4 m-auto ps-0 col-8">
 
             <ul>
-                <li class="post_create">
+                <li class="post_create py-3">
 
-                        <router-link to='/edit' class="text-light text-decoration-none "><button class="btn_submit ">Publier</button></router-link>
+                        <router-link to='/edit' class="text-decoration-none"><button class="btn_submit">Publier un Post</button></router-link>
 
                 </li>
 
@@ -25,7 +27,7 @@
                     <section class='post__header'>
                         <div class="user__name">
                         {{ post.category }} <br>
-                        par {{ post.pseudo}} <br>
+                        by {{ post.pseudo}} <br>
                         <p class="class-text"><small class="text-muted">Date : {{ post.date_create}}</small></p>
                         </div>
                         <p class="post__title"> {{ post.title }} </p>
@@ -61,7 +63,8 @@
                             <div class="user__name">
                             {{ item.user}} 
                             </div>
-                            <p> {{ item.comment }}</p>
+                            <p> {{ item.comment }}<br>
+                            by {{ item.pseudo }}</p>
                             
                             <section class="comment__footer">
                                 <div class="like__dislike">

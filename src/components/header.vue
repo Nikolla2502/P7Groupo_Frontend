@@ -1,6 +1,6 @@
 <template>
-    <div class='header'>
-        <img alt="Vue logo" src="../assets/groupomania_txt.png">
+    <div class='header pt-2'>
+        <img alt="Vue logo" src="../assets/groupomania.png">
         <h1>{{ message }}</h1>
     </div>
 </template>
@@ -22,10 +22,7 @@ h1 {
 }
 .header 
 {
-    padding-top: 10px;
     border-bottom: 3px solid #fd2d01 ;
-    background: #FFF;
-    
 }
 img {
     width:30%;

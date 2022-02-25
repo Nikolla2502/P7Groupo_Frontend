@@ -1,6 +1,6 @@
 <template>
 <div class="contenu">
-    <BannerPost></BannerPost>
+    <Banner message="Votre réseau d'entreprise"></Banner>
     <BodyPost></BodyPost>
 
 </div>
@@ -8,7 +8,7 @@
 
 <script>
 
-import BannerPost from '../components/post/post_header.vue'
+import Banner from '../components/header.vue'
 import BodyPost from '../components/post/post_body.vue'
 
 
@@ -18,7 +18,7 @@ import BodyPost from '../components/post/post_body.vue'
 export default {
     name: 'Post',
     components: {
-    BannerPost,
+    Banner,
     BodyPost
     },
 
