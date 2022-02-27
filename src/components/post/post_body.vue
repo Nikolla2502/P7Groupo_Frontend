@@ -1,15 +1,15 @@
 <template>
     <div class='body_post'>
-        <section class='aside mt-5 col-2 '>
-            <ul class="category list-group py-3">
-                <li v-on:click="reloadPost()">Récents</li>
-                <li class="list-group-item">Cinema</li>
-                <li class="list-group-item">Vacances</li>
-                <li class="list-group-item">Sports</li>
+        <section class='aside col-12 col-md-2 mx-auto'>
+            <ul class="aside_item py-3">
+                <li class="id_categoryAll" v-on:click="alert('Bonjour')">Tous les posts</li>
+                <li class="id_category1" v-on:click="alert('Bonjour')">Cinema</li>
+                <li class="id_category2">Vacances</li>
+                <li class="id_category3">Sports</li>
             </ul>
-            <ul class='profil py-3'>
-                <li class='userProfil '>Profil</li>
-                <li ><router-link to='/deconnexion' class="text-decoration-none text-light">Deconnexion</router-link></li>
+            <ul class='aside_item'>
+                <router-link to='/profil' class="text-decoration-none"><li>Mon Profil</li></router-link>
+                <router-link to='/deconnexion' class="text-decoration-none"><li >Deconnexion</li></router-link>
             </ul>
 
         </section>
@@ -20,7 +20,13 @@
                 <li class="post_create py-3">
 
                         <router-link to='/edit' class="text-decoration-none"><button class="btn_submit">Publier un Post</button></router-link>
+        <div>
+        <b-button class="btn" v-b-modal.modal-1>Publier un post</b-button>
 
+        <b-modal id="modal-1" title="BootstrapVue">
+            <p class="my-4">modale</p>
+        </b-modal>
+        </div>
                 </li>
 
                 <li v-bind:key='index' v-for="(post, index ) in posts">
@@ -58,13 +64,11 @@
                         </svg>
                     </section>
 
-                    <ul class='comments'>
-                        <li v-bind:key='index' v-for="(item, index ) in comments">
-                            <div class="user__name">
-                            {{ item.user}} 
-                            </div>
-                            <p> {{ item.comment }}<br>
-                            by {{ item.pseudo }}</p>
+                    <ul class='comments ps-0' v-if="posts.id_user !== comments.id_user">
+                        <li v-bind:key='index' v-for="(comment, index ) in comments">
+
+                            <p> {{ comment.comment }}<br>
+                            by {{ comment.pseudo }}</p>
                             
                             <section class="comment__footer">
                                 <div class="like__dislike">
@@ -101,30 +105,34 @@
 <script>
 import axios from 'axios';
 
+
 export default {
     name: 'BodyPost',
+
     data() {
         return {
             posts: [],
             comments: [],
+            
         }
 
     },
     methods: {
-        onLoad(){
-            axios.get('http://localhost:3000/api/thread')
-                .then(res => this.posts = res.data.result)
+        loadPost(){
+            axios.get('http://localhost:3000/api/thread') 
+                .then(res => this.posts = res.data.post)
                 .catch(error => this.posts = [error,{ title: "Erreur de chargement"}])
             },
-        reloadPost(){
+        loadComment(){
             axios.get('http://localhost:3000/api/thread/comments')
-            .then(res => this.comments = res.data.result)
-            .catch(error => this.comments = [error,{ title: "Erreur de chargement"}])
+            .then(res => this.comments = res.data.comment)
+            .catch(error => this.comments = [error,{ title: "Erreur de chargement des commentaires"}])
         }
         },
 
     mounted: function () {
-            this.onLoad()
+            this.loadPost(),
+            this.loadComment()
     },
 
 
@@ -132,7 +140,12 @@ export default {
 </script>
 
 <style scoped>
-
+/* a {
+    color:#FFF;
+}
+a:hover {
+    color:#fd2d01;
+} */
 label {
     padding: 0;
 }

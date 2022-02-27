@@ -3,10 +3,10 @@
         <h1>Rejoignez-nous</h1>
         <p>sur votre réseau d'entreprise</p>
         <form>
-            <input type="text" placeholder="Votre Pseudo">
-            <input type="text" placeholder="Votre Email">
-            <input type="password" placeholder="Votre Mot de Passe">
-            <input type="password" placeholder="Confirmer votre Mot de Passe">
+            <input type="text" v-model="pseudo" placeholder="Votre Pseudo">
+            <input type="text" v-model="email" placeholder="Votre Email">
+            <input type="password" v-model="password" placeholder="Votre Mot de Passe">
+            <input type="password" v-model="password" placeholder="Confirmer votre Mot de Passe">
         </form>
         <router-link to='/post'><button class="px-2 rounded-3">Inscription</button></router-link>
 </div>
@@ -15,7 +15,6 @@
 <script>
 export default {
   name: 'Register',
-
 }
 </script>
 

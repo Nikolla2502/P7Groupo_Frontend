@@ -11,6 +11,13 @@
         <label for="floatingSelectGrid">Categorie</label>
         </div>
         </div>
+<div>
+  <b-dropdown id="dropdown" text="Categories" class="m-3">
+    <b-dropdown-item>Cinéma</b-dropdown-item>
+    <b-dropdown-item>Vacances</b-dropdown-item>
+    <b-dropdown-item>Sport</b-dropdown-item>
+  </b-dropdown>
+</div>
         <div class="col-10 m-auto my-2">
         <div class="form-floating">
         <input type="text" class="form-control" id="floatingInputGrid" placeholder="" value="">
@@ -26,9 +33,24 @@
 </template>
 
 <script>
+
+
 export default {
   name: 'PostMedia',
 }
 </script>
+.btn {
+  color:
+}
+<style>
+.btn {
+  background: #fd2d01;
+  border: solid 1px #fd2d01;
 
-<style></style>
+}
+.btn:hover {
+    background: #FFF;
+    color: #fd2d01;
+    border: solid 1px #fd2d01;
+}
+</style>

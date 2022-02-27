@@ -4,11 +4,17 @@ import Connexion from '@/views/connexion'
 import Post from '@/views/post'
 import Deconnexion from '@/views/deconnexion'
 import Recovery from  '@/views/recovery'
-import Edit from  '@/components/post/post_edit'
+import Edit from '@/components/post/post_edit'
+import Profil from "@/components/profil";
 
 Vue.use(VueRouter)
 
 const routes = [
+  {
+    path: '/profil',
+    name: 'Profil',
+    component: Profil
+  },
   {
     path: '/',
     name: 'Connexion',

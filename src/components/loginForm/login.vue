@@ -3,8 +3,8 @@
           <h1>Bonjour</h1>
           <p>Merci de vous connecter</p>
           <form>
-            <input type="email" placeholder="Votre Email">
-            <input type="password" placeholder="Votre Mot de Passe">
+            <input type="email" v-model="email" placeholder="Votre Email">
+            <input type="password" v-model="password" placeholder="Votre Mot de Passe">
           </form>
           <router-link to='/post'><button class="px-2 rounded-3" >Connexion</button></router-link>
           <p class="recover">
@@ -18,6 +18,12 @@
 <script>
 export default {
   name: 'Login',
+  data() {
+    return {
+      email : '',   
+      password : ''
+    }
+  },
 }
 </script>
 
