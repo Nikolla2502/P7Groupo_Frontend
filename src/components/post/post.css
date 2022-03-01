@@ -1,5 +1,6 @@
 /* post body */
 .body_post {
+
     display: flex;
     background: #FFF;
     height: auto;
@@ -15,11 +16,10 @@
 .aside {
     display: flex;
     flex-direction: column;
-    position:sticky;
-    top: 3vh;
+
     background: #FFF;
     margin-top: 6vh;
-    padding: auto;
+
 }
 .aside_item {
     

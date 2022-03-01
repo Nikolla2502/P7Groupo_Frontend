@@ -1,6 +1,5 @@
 <template>
-        <div class="login__box">
-              
+  <div class="login__box">
     <div class="col-8 m-auto pt-5">
         <div class="form-floating">
         <select class="form-select " id="floatingSelectGrid" aria-label="Floating label select example">
@@ -21,21 +20,16 @@
 
     <div class="form-floating col-10 m-auto">
     <b-form-textarea
-    class="mt-3"
+      class="mt-3"
       id="textarea"
-      v-model="text"
-      placeholder="Enter something..."
+      type="text"
       rows="3"
       max-rows="6"
     ></b-form-textarea>
     <label for="textarea">Le texte de votre post</label>
-
-        
     </div>
-
-          
- <router-link to='/post'><button type="button" class="btn_submit mt-5 shadow-sm">Publier</button></router-link> 
-        </div>
+    <router-link to='/post'><button type="button" class="btn_submit mt-5 shadow-sm">Publier</button></router-link> 
+  </div>
 </template>
 
 <script>
